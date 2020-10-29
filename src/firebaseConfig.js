@@ -35,4 +35,9 @@ const providerTwitter = new firebase.auth.TwitterAuthProvider();
 providerTwitter.setCustomParameters({ prompt: 'select_account' });
 export const signInWithTwitter = () => auth.signInWithPopup(providerTwitter);
 
+export const signOut = () =>
+  auth.signOut().then(() => {
+    console.log('signout');
+  });
+
 export default firebase;
